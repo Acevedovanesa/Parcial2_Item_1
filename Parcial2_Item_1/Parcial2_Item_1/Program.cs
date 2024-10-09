@@ -17,11 +17,11 @@ internal class Program
                 NumJugadores = int.Parse(Console.ReadLine());
             }
               
-            //Se usa la función random, la cual permite valores aleatorios
+            //Se usa la función random, la cual permite valores aleatorios, en la cual se pueden declarar minimos y maximos 
             Random R = new Random();
             int NumAle = 0;
 
-            // Se genera un número aleatorio y se usa la función se switch con la variable NumJugadores
+            // Se genera un número aleatorio y se usa la función de switch con la variable NumJugadores
 
             switch (NumJugadores)
             {
@@ -44,7 +44,7 @@ internal class Program
             bool Adivina = false;
             int Turno = 0;
 
-            // 3. Turnos de los jugadores
+            // Se declaran variables para realizar la comparativa de los jugadores y obtener el ganador
             while (!Adivina)
             {
                 int JugadorActual = (Turno % NumJugadores) + 1;
@@ -67,11 +67,20 @@ internal class Program
                 Turno++;
             }
 
-
-
-
-
-
+            // Finalización de juego y pregunta de si quieen seguir jugando
+            Console.WriteLine("¿Quieren jugar de nuevo? (S/N): ");
+            string respuesta = Console.ReadLine().ToUpper();
+            if (respuesta != "S")
+            {
+                JugarNuevo = false;
+            }
+            Console.Clear(); // Borra la consola para una nueva partida
         }
+
+
+
+
+
     }
+    
 }
