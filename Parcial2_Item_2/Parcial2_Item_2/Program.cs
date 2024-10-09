@@ -55,16 +55,45 @@
                         Console.WriteLine("Categoría: Insuficiente");
                     }
 
-
-
-
-
-
-
-
-
+                    // Se agrega otro if para validar si los estudiantes ganaron o perdieron
+                    if (Promedio >= 3.0)
+                    {
+                        EstGanaron++;
+                    }
+                    else
+                    {
+                        EstPerdieron++;
+                    }
                 }
+
+                // Resultados finales del grupo de estudiantes
+
+                Console.WriteLine($"Estudiantes que ganaron: {EstGanaron}");
+
+                Console.WriteLine($"Estudiantes que perdieron: {EstPerdieron}");
+
+                // Preguntar si desea evaluar otro grupo de estudiantes
+
+                Console.WriteLine("¿Desea evaluar otro grupo de estudiantes? (S/N): ");
+                string respuesta = Console.ReadLine().ToUpper();
+                if (respuesta != "S")
+                {
+                    Evaluar = false;
+                }
+
+                Console.Clear(); // Borra los datos en pantalla
             }
+
         }
+
+
+
+
+
+
+
     }
-}
+            }
+        
+    
+
